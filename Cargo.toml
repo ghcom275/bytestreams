@@ -1,0 +1,28 @@
+[package]
+name = "bytestreams"
+version = "0.0.0"
+description = "Bytestream types and traits"
+authors = ["Dan Gohman <dev@sunfishcode.online>"]
+license = "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT"
+keywords = ["stream"]
+categories = ["os"]
+repository = "https://github.com/sunfishcode/bytestreams"
+edition = "2018"
+readme = "README.md"
+
+[dependencies]
+unicode-normalization = "0.1.16"
+
+[target.'cfg(not(windows))'.dependencies]
+libc = "0.2.80"
+
+[dev-dependencies]
+anyhow = "1.0.32"
+
+[features]
+default = ["text"]
+nightly = []
+text = []
+
+[badges]
+maintenance = { status = "actively-developed" }
